@@ -1,8 +1,12 @@
-#!/Users/utsavtiwary/Desktop/Kaggle-Titanic-Competition/env/bin/python3
-# -*- coding: utf-8 -*-
+#!/Users/utsavtiwary/Desktop/Repos/Kaggle-Titanic-Competition/env/bin/python3
+# EASY-INSTALL-ENTRY-SCRIPT: 'kaggle==1.5.6','console_scripts','kaggle'
+__requires__ = 'kaggle==1.5.6'
 import re
 import sys
-from kaggle.cli import main
+from pkg_resources import load_entry_point
+
 if __name__ == '__main__':
-    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
-    sys.exit(main())
+    sys.argv[0] = re.sub(r'(-script\.pyw?|\.exe)?$', '', sys.argv[0])
+    sys.exit(
+        load_entry_point('kaggle==1.5.6', 'console_scripts', 'kaggle')()
+    )
